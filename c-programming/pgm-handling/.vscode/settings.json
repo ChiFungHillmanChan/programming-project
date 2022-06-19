@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "__bit_reference": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "unordered_map": "c",
+        "algorithm": "c",
+        "pgmerror.h": "c",
+        "stdio.h": "c",
+        "pgmreadandwrite.h": "c",
+        "pgmassemble.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

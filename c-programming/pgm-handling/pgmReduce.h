@@ -1,0 +1,1 @@
+int ReduceFile(PGMImage *pgm,  const char *filename, int reduce_number); 

@@ -1,0 +1,15 @@
+Module Plan
+
+Module for improving pgmEcho.c:
+Firstly, I will put all the define variable to top. Improve by grouping every file input to one single function. Put the main function to the bottom. After that, I will create a new file in c programming for unit testing with 3 arguments. 
+
+Module for reading and comparing pgm file:
+the main function in c programming will compare the two argument read in command line. The second another function will read two pgm files and memory allocate them. The third function will test if two files are identical will returning true. The basic summary of comparing both file by magic numberer identifying the file, the width and hight as ASCII characters. Then, will read the pgm file and fscanf the image and memory allocated it. Then use if statement read it as binary number. Then convert binary number to decimal number and finally convert to ASCII code. Another two separate function in c programming will be used to convert the ASCII form to the binary and convert the binary form to the ASCII. 
+
+Module for pgmReduce:
+The main function use to take 3 arguments from command line. Then create a function that read the file and see if it exist, if it exist then memory allocated it and take the image size of the pgm file. Then create a function takes the image length and width, then reduce the image size in that function. 
+
+
+Module for pgm assemble:
+This will be using two dimension array. The main function is to read 3 command line arguments. Then in a function, by taking the integer value in args[1], calculate the grid/row-column size. 
+Finally add the row-column index to the filename provided. 
