@@ -10,6 +10,9 @@ run function
 1.  Go To the pgm-handling directory to run the file.
 
 2.  Use 'Make' command to start running the files.
+```bash
+make
+```
 
 3.  There are 7 main files to execite:
 - 3.1.    pgmEcho:
@@ -44,6 +47,9 @@ run function
         Finally output the file if there is no error on every input file.
 
 4.  Use the command "make clean" to delete all the files made by "make"
+```bash
+make clean
+```
 
 5.  There is a testscript.sh file for testing every possible error and check the output. 
     Use the suggested command "sh testscript.sh"
@@ -51,6 +57,8 @@ run function
     Then compare the expected output and actual output. 
     At the bottom of the testscript, it count the total test number and tha failing test also. 
     If the file is not exist , it wont show the related testing. 
-
+```bash
+sh testscript.sh
+```
 
 
