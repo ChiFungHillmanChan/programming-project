@@ -19,10 +19,11 @@ cd bin
 ./library books.txt
 ```
 
-3. This program has two mode: user mode and librarian mode. You can log in by user of librarian
-3.1 User: User can borrow maximum 4 books from library. After borrowed books, they have to return it back to library.
+3. This program has two mode: user mode and librarian mode. You can log in by user of librarian.
 
-3.2 Librarian: Librarian can check all the books and the borrowed books in it. 
+- 3.1 User: User can borrow maximum 4 books from library. After borrowed books, they have to return it back to library.
+
+- 3.2 Librarian: Librarian can check all the books and the borrowed books in it. 
 
 4. Exit the program by option EXIT and clear the program by
 ```bash
