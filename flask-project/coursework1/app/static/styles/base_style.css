@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+body{	
+    height:8vh;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    font-family: sans-serif;
+}
+nav{
+    display:flex;
+    align-items:center; 
+    min-height:8vh;
+    background-color: #222;
+}
+.nav-links{
+    display:flex;
+}
+.nav-links li{
+    list-style-type: none;
+}
+.nav-links a{
+    color: #999; 
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 10px 1em 0 1em;
+    white-space: nowrap;
+}
+.nav-links a:hover{
+    border:none;
+    color:#fff;
+}
+.nav-toggler{
+    height: 50px;
+    width: 60px;
+    background-color:transparent;
+    border:none; 
+    border-radius:4px; 
+    cursor:pointer;
+    display:none;
+    transition: 0.5s ease;
+}
+.nav-toggler:focus{
+    outline:none;
+}
+.nav-toggler span{
+    height:2.3px;
+    width:30px;
+    background-color:#fff;
+    display:block; 
+    margin:auto;
+    position:relative;
+    transition: 0.5s ease;
+}
+.nav-toggler.active span{
+    background-color: transparent; 
+}
+.nav-toggler span::before,
+.nav-toggler span::after{
+    content:'';
+    position:absolute;
+    left: 0;
+    top:0;
+    width:100%;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.5s ease;
+}
+.nav-toggler span::before{
+    transform:translateY(-6px);
+}
+.nav-toggler.active span::before{
+    transform:rotate(45deg);
+    transition: 0.5s ease;
+}
+.nav-toggler span::after{
+    transform:translateY(6px);
+}
+.nav-toggler.active span::after{
+    transform:rotate(135deg);
+    transition: 0.5s ease;
+
+}
+.row::after {
+    clear: both;
+    display: table; 
+}
+
+a.current{
+    color:#fff;
+}
+
+
+@media (max-width: 900px) {
+    nav{
+        justify-content: left;
+        overflow-x:hidden;
+        width:100%;
+        background-color: #000;
+    }
+    .nav-links{
+        padding-left: 0px;
+        padding-right: 0px; 
+        position:absolute;
+        left:0; 
+        width:50%;
+        top:5.5%; 
+        display:flex;
+        flex-direction: column;
+        text-align :center; 
+        background-color: black;
+        transform: translateX(-100%);
+        border-bottom: solid 1px silver;
+        opacity: 0;
+        transition: 1s ease;
+    }
+    .nav-links li{
+        padding: 30px 0 30px 0;
+    }
+    .nav-toggler{
+        display:block;
+        margin-left: 5%;
+    }
+    .notification{
+        left:0;
+        width:100%;
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+    opacity: 0.9;
+    transition: 1s ease;
+}

@@ -1,0 +1,34 @@
+h2{
+    margin-left: 3%;
+}
+.content{
+    align-items:center;
+    width:100%;
+    padding:20px 0 10px 3%;
+    align-items: center; 
+    justify-content: center;
+    border-bottom: 0.5px solid gray;
+}
+td{
+    display:flex;
+    float: left;
+    clear:left;
+}
+.line{
+    border-bottom: 0.5px solid gray;
+}
+.no_line{
+    border-bottom: none;
+}
+input{
+    color:aliceblue;
+    background-color: black;
+    padding: 8px;
+}
+.description{
+    padding: 10px 0 10px 0;
+}
+.title{
+    font-weight:bolder;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,119 @@
+h2{    
+    margin-left: 3%;
+    white-space: nowrap;
+}
+.content{
+    align-items:center;
+    width:100%;
+    align-items: center; 
+    justify-content: center;
+    border-bottom: 0.5px solid gray;
+    padding: 10px 0 10px 3%;
+}
+td{
+    display:flex;
+    float: left;
+    clear:left;
+}
+.line{
+    border-bottom: 0.5px solid gray;
+    display:flex;
+}
+
+.no_line{
+    border-bottom: none;
+}
+.description{
+    padding: 10px 0 10px 0;
+}
+.title{
+    font-weight:bolder;
+    padding-bottom: 10px;
+}
+button{
+    min-width:250px;
+    align-content: center;
+    background-color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+    border:none;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+  
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right:300px;
+    background-color: #f2f2f2;
+    width:250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+} 
+.show {
+    display: block;
+}
+.float_right{
+    display:flex;
+    width:100%;
+    justify-content: right;
+}
+form{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-right:5%;
+    min-width:300px;
+}
+#search{
+    margin-left:5%;
+    font-size:20px;
+    border:2px solid #f2f2f2;
+    padding: 5px 10px 5px 10px;
+    align-items: center;
+
+}
+@media (max-width: 765px) {
+    .dropdown-content {
+        right:180px;
+    }
+    form{
+        display:flex;
+        justify-content:right;
+        min-width:180px;
+    }
+    #search{
+        font-size: 15px;
+    }
+    button{
+        font-size:15px;
+        margin-right: 5px;
+    }
+}

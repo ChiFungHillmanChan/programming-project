@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/base_style.css">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+
+    <nav class="row">
+        <button type="button" class="nav-toggler">
+            <span></span>
+        </button>
+       
+        <ul class="nav-links">
+            {% block navigation %}{% endblock %} 
+        </ul>
+    </nav>
+    {% block header %}{% endblock %}
+    {% block body %}{% endblock %}
+    <script src="../static/javascript/nav_func.js"></script>
+</body>
+</html>

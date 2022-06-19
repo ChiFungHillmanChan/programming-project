@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block styles %}   
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_for_all.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block navigation %}
+    <li><a class="current" href="/">All Assessments</a></li>
+    <li><a href="/Create_Assessment">Create Assessments</a></li>
+    <li><a href="/Completed_Assessment">Completed Assessments</a></li>
+    <li><a href="/Uncomplete_Assessment">Uncomplete Assessments</a></li>
+    <li><a href="/Delete_Assessment">Delete Assessments</a></li>
+{% endblock %}
+
+{% block header %}
+    <div class="line">
+        <h2>All Assessments</h2>
+            <div class="float_right">
+                <div class="dropdown"></div>
+                    <button class="dropbtn" onclick="myFunction()" >
+                        {{ name }}
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <form action="/search" method="GET">
+                        <input type="text" name="search" id="search" placeholder="Search By Title Name">
+                    </form>
+                </div>
+            </div>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="/">Order By</a>
+            <a href="/uncomplete_deadline">Uncomplete Deadline</a>
+            <a href="/filter_by_deadline">Upcoming Deadline</a>
+            <a href="/uncomplete_filter">Uncomplete Assessments</a>
+        </div>
+    <script src="../static/javascript/dropdown.js"></script>
+{% endblock %}
+
+{% block body %}
+    {% if tasks|length < 1 %}   
+    <div class="content">
+        <h3>There are no assessments!</h3>
+    </div>
+
+    {% else %}
+
+        {% for task in tasks %}
+        <div class="content">
+            <table>
+                <tr>
+                    <td class="title">{{ task.title }}</td>
+                    <td>Deadline: {{ task.deadline }}</td>
+                    <td>Module: {{ task.module }}</td>
+
+                    {% if task.completed %}
+                    <td>Status: Completed</td>
+                    {% else %}
+                    <td>Status: Uncomplete</td>
+                    {% endif %}
+
+                    <td class="description">Description: {{ task.description }}</td>
+                </tr>
+            </table>
+        </div>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
