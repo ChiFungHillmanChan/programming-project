@@ -27,6 +27,6 @@ cd bin
 
 4. Exit the program by option EXIT and clear the program by
 ```bash
-make
+make clean
 ```
 
