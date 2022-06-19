@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title> Special event</title>
+    <script src="getposition.js"></script>
+</head>
+<body> 
+    <div class="row col-12">
+        <header>
+            <h1>Special-event</h1>
+            <ul>
+                <li><a href="../index.html">Back To Home Page</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="row paragraph col-12">
+        <h2>This tourist website is available now!! To celebrate this, we have made a special event for all visitors.</h2><br>
+        <p>To encourage Computer Science students in Leeds, everytime you click the donate button, we will donate £1 to support them.</p><br>
+        <p>Besides, we have a special event about your current location. If your current latitude is in between 53 and 54 and your longitude is a negative number. You will donate an extra £20 to students once.</p>
+    </div>
+    <div class="row col-12 donationpart">
+        <p id="current_donation"> Click button to see the current donation</p>
+        
+    </div>
+    <div class="row container">
+        <div class="location col-6">
+            <p id="location"></p>
+            <p id="check_location">Click this button to check your current location! </p>
+            <button onclick="getLocation()" id="button_location">Check Location</button>
+        </div>
+        <div class="clickcounter col-6">
+            <p>Click here to donate!</p>
+            <button onclick="clickCounter()">Donation</button>
+        </div>
+    </div>
+    <div class="row final col-12">
+        <p>Thank you for your support and hope you like this website!</p>
+    </div>
+    <script src="getposition.js"></script>
+</body>
+</html> 

@@ -1,0 +1,14 @@
+CACHE MANIFEST
+/styles.css
+/navigationshow.js
+/video/what-is-tourism.mp4
+/Japan/Japan-introduction.html
+/Singapore/singapore-introduction.html
+/Korea/korea-introduction.html
+/TaiWan/TaiWan-introduction.html
+
+NETWORK:
+*
+
+FALLBACK:
+/html/ /index.html

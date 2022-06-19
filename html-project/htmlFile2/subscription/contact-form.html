@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Subscribe page</title>
+    <script src="emailvalidation.js"></script>
+    <script src="checkselect.js"></script>
+</head>
+<body>
+    <div class="row col-12 container">
+        <div class="header">
+            <h2>Subscribe Us !</h2>
+        </div>
+        <div class="information">
+            <p>Tell us your email for the most updated information!</p>
+            <a href="../index.html">Subscribe next time</a>
+        </div>
+        <form id="form">
+            <div class="element">   
+                <input type="text" id="name" name="name" placeholder="Name">
+            </div>
+            <div class="element">
+                <input type="text" id="email" placeholder="Email Address" onkeyup="validation()">
+            </div>
+            <div class="error-text">Please Enter Valid Email Address !</div>
+            <div class="element">
+                <select id="list" onchange="checkselect()">
+                    <option>Select a country you interested in</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Korea">Korea</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="TaiWan">TaiWan</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="element">
+                <textarea type="text" id="message" placeholder="Tell us your favourite country" rows="1" cols="1"></textarea>
+            </div>
+            <div class="element">
+                <input id="button" type="button" onclick="location.href='../index.html'" value="submit and back to home page">
+            </div> 
+        </form>
+    </div>
+</body>
+</html>

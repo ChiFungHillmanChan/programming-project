@@ -1,0 +1,13 @@
+CACHE MANIFEST
+/styles.css
+/../index.html
+/../PhotoForIndex/pexels-kin-pastor-777059.jpg
+/../PhotoForIndex/pexels-photo-2070033.jpeg
+/../PhotoForIndex/pexels-photo-373290.jpeg
+/../PhotoForIndex/pexels-timo-volz-1717859.jpg
+
+NETWORK:
+*
+
+FALLBACK:
+/html/ /CopyRight.html
