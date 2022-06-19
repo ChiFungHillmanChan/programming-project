@@ -8,7 +8,7 @@ Directory library contains:
 - bin directory with books.txt contain books
 - Makefile
 
-Run function:
+## Run function:
 1. Go To library directory to stary the program using 
 ```bash
 make

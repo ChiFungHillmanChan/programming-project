@@ -3,9 +3,17 @@
 BY CHI FUNG HILLMAN CHAN
 
 ## Directory: pgm-handling
-pgm-handling folder contains: ASCIIfile folder for ASCII pgmfile, BinaryFile folder for binary pgmfile, Makefile, modules.txt,.c files x10, header files x8 , testplan.txt, testscript.sh
+pgm-handling folder contains: 
+- ASCIIfile folder for ASCII pgmfile
+- BinaryFile folder for binary pgmfile 
+- Makefile
+- modules.txt
+- .c files x10
+- header files x8 
+- testplan.txt
+- testscript.sh
 
-run function 
+## Run function 
 
 1.  Go To the pgm-handling directory to run the file.
 
