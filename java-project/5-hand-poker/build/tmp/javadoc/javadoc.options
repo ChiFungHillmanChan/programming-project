@@ -1,0 +1,12 @@
+-classpath '/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/build/classes/java/main:/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/build/resources/main'
+-d '/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/build/docs/javadoc'
+-doctitle 'comp1721_cwk2 API'
+-notimestamp 
+-quiet 
+-windowtitle 'comp1721_cwk2 API'
+'/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/PokerHand.java'
+'/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/CardException.java'
+'/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/PokerStats.java'
+'/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/CardCollection.java'
+'/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/Card.java'
+'/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/Deck.java'

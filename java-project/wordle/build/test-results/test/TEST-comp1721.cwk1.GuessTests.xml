@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="comp1721.cwk1.GuessTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-03-01T15:44:55" hostname="HillmandeMBP.broadband" time="0.059">
+  <properties/>
+  <testcase name="GameException thrown for invalid word" classname="comp1721.cwk1.GuessTests" time="0.027"/>
+  <testcase name="compareWith() correct when all letters match" classname="comp1721.cwk1.GuessTests" time="0.011"/>
+  <testcase name="GameException thrown for invalid guess number" classname="comp1721.cwk1.GuessTests" time="0.002"/>
+  <testcase name="compareWith() correct when all letters in wrong place" classname="comp1721.cwk1.GuessTests" time="0.001"/>
+  <testcase name="guessNumber field set up correctly" classname="comp1721.cwk1.GuessTests" time="0.001"/>
+  <testcase name="compareWith() correct when no letters match" classname="comp1721.cwk1.GuessTests" time="0.001"/>
+  <testcase name="compareWith() correct when some letters match" classname="comp1721.cwk1.GuessTests" time="0.001"/>
+  <testcase name="matches() behaves correctly" classname="comp1721.cwk1.GuessTests" time="0.002"/>
+  <testcase name="word field set up correctly" classname="comp1721.cwk1.GuessTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.37">
+<file name="/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/Card.java">
+</file>
+<file name="/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/CardCollection.java">
+</file>
+<file name="/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/CardException.java">
+</file>
+<file name="/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/Deck.java">
+</file>
+<file name="/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/PokerHand.java">
+</file>
+<file name="/Users/hillmanchan/Desktop/comp1721/coursework/cwk2/src/main/java/comp1721/cwk2/PokerStats.java">
+</file>
+</checkstyle>

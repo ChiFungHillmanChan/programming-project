@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="comp1721.cwk2.Basic" tests="16" skipped="0" failures="0" errors="0" timestamp="2022-05-22T14:09:15" hostname="HillmandeMacBook-Pro.local" time="0.048">
+  <properties/>
+  <testcase name="Correct cards dealt from deck" classname="comp1721.cwk2.Basic" time="0.022"/>
+  <testcase name="CardException when adding a duplicate card to a hand" classname="comp1721.cwk2.Basic" time="0.002"/>
+  <testcase name="CardException when discarding from an empty hand" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="Hands created with correct numbers of cards" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="CardException when dealing from an empty deck" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="Deck can be shuffled" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="Hand creation fails if too many cards" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="contains() works correctly for a deck" classname="comp1721.cwk2.Basic" time="0.002"/>
+  <testcase name="Correct string representation of a hand" classname="comp1721.cwk2.Basic" time="0.002"/>
+  <testcase name="Cards can be added to a deck" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="Cards can be added to a hand" classname="comp1721.cwk2.Basic" time="0.0"/>
+  <testcase name="isEmpty() works correctly for full and empty decks" classname="comp1721.cwk2.Basic" time="0.0"/>
+  <testcase name="CardException when adding to a full hand" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="discardTo() returns cards to a deck" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="discard() empties a hand" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <testcase name="size() works correctly for full and empty decks" classname="comp1721.cwk2.Basic" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
