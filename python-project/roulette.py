@@ -156,7 +156,6 @@ def auto_start():
             t -= 1
         except KeyboardInterrupt:
             return False
-    clear()
     return True
 
 # clear system
@@ -179,11 +178,10 @@ def main():
                 break
 
         roulette_choice = roulette(run)
-
+        clear()
         print("Roulette is set! Time to guess!! good luck! \n")
         result = percentage(0,'set_percentage', -1, -1, -1, result)
         deposit = int(input("Enter your Deposit: "))
-        clear()
 
         total = 1
         while deposit > 0:
