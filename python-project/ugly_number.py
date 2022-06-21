@@ -72,6 +72,7 @@ def check_ugly_requirement(expression):
     for x in ugly_list:
         if int(expression) % int(x) == 0:
             return 1
+    # if not return 0 
     return 0
 
 def main():
