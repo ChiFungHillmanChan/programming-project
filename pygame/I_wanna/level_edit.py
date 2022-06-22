@@ -10,10 +10,10 @@ fps = 60
 
 tile_size = 40
 rows = 25
-cols = 16
+cols = 16 
 margin = 40
 WIDTH = 1000  #1000
-HEIGHT = 640# 640
+HEIGHT = 640 # 640
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT + 200))
 pygame.display.set_caption("Level Editor")
@@ -146,6 +146,7 @@ while run:
         pickle_out = open(f'level{level}', 'wb')
         pickle.dump(world_data, pickle_out)
         pickle_out.close()
+        print(world_data)
     if load_button.draw():
         #load in level data
         if path.exists(f'level{level}'):
@@ -192,4 +193,5 @@ while run:
 
     #update game display window
     pygame.display.update()
+    
 pygame.quit()
