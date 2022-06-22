@@ -22,9 +22,13 @@ pygame.display.set_caption("Level Editor")
 apple_img = pygame.image.load( os.path.join("assets", "traps/apple.png"))
 banana_img = pygame.image.load( os.path.join("assets", "traps/banana.png"))
 square_img = pygame.image.load( os.path.join("assets", "traps/square.png"))
-trap_img = pygame.image.load( os.path.join("assets", "traps/trap.png"))
-glass_img = pygame.image.load( os.path.join("assets", "traps/glass_block.png"))
+trap_down_img = pygame.image.load( os.path.join("assets", "traps/trap_down.png"))
+trap_left_img = pygame.image.load( os.path.join("assets", "traps/trap_left.png"))
+trap_top_img = pygame.image.load( os.path.join("assets", "traps/trap_top.png"))
+trap_right_img = pygame.image.load( os.path.join("assets", "traps/trap_right.png"))
+glass_block_img = pygame.image.load( os.path.join("assets", "traps/glass_block.png"))
 noglass_block_img = pygame.image.load( os.path.join("assets", "traps/noglass_block.png"))
+long_bar_img = pygame.image.load( os.path.join("assets", "traps/long_bar.png"))
 save_img = pygame.image.load( os.path.join("assets", "level_edit/save_btn.png"))
 load_img = pygame.image.load( os.path.join("assets", "level_edit/load_btn.png"))
 
@@ -68,41 +72,36 @@ def draw_grid():
         pygame.draw.line(WIN, (255,255,255), (0, d * tile_size), (WIDTH, d * tile_size ))
     
 def draw_world():
-	for row in range(cols):
-		for col in range(rows):
-			if world_data[row][col] > 0:
-				if world_data[row][col] == 3:
-					#dirt blocks
-					img = pygame.transform.scale(apple_img, (tile_size, tile_size))
-					WIN.blit(img, (col * tile_size, row * tile_size))
-				if world_data[row][col] == 2:
-					#grass blocks
-					img = pygame.transform.scale(banana_img, (tile_size, tile_size))
-					WIN.blit(img, (col * tile_size, row * tile_size))
-				if world_data[row][col] == 1:
-					#enemy blocks
-					img = pygame.transform.scale(square_img, (tile_size, tile_size))
-					WIN.blit(img, (col * tile_size, row * tile_size))
-				if world_data[row][col] == 4:
-					#horizontally moving platform
-					img = pygame.transform.scale(trap_img, (tile_size, tile_size))
-					WIN.blit(img, (col * tile_size, row * tile_size))
-				if world_data[row][col] == 5:
-					#vertically moving platform
-					img = pygame.transform.scale(glass_img, (tile_size, tile_size))
-					WIN.blit(img, (col * tile_size, row * tile_size))
-				if world_data[row][col] == 6:
-					#lava
-					img = pygame.transform.scale(noglass_block_img, (tile_size, tile_size))
-					WIN.blit(img, (col * tile_size, row * tile_size))
-				# if world_data[row][col] == 7:
-					#coin
-					# img = pygame.transform.scale(coin_img, (tile_size // 2, tile_size // 2))
-					# screen.blit(img, (col * tile_size + (tile_size // 4), row * tile_size + (tile_size // 4)))
-				# if world_data[row][col] == 8:
-					#exit
-					# img = pygame.transform.scale(exit_img, (tile_size, int(tile_size * 1.5)))
-					# screen.blit(img, (col * tile_size, row * tile_size - (tile_size // 2)))
+    for row in range(cols):
+        for col in range(rows):
+            if world_data[row][col] > 0:
+                if world_data[row][col] == 1:
+                    img = pygame.transform.scale(long_bar_img, (tile_size, tile_size)) 
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 2:  
+                    img = pygame.transform.scale(banana_img, (tile_size, tile_size)) 
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 3:
+                    img = pygame.transform.scale(apple_img, (tile_size, tile_size)) 
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 4:
+                    img = pygame.transform.scale(trap_down_img, (tile_size, tile_size)) 
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 5:
+                    img = pygame.transform.scale(glass_block_img, (tile_size, tile_size))
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 6:
+                    img = pygame.transform.scale(noglass_block_img, (tile_size, tile_size))
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 7:
+                    img = pygame.transform.scale(trap_left_img, (tile_size, tile_size)) 
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 8:    
+                    img = pygame.transform.scale(trap_top_img, (tile_size, tile_size)) 
+                    WIN.blit(img, (col * tile_size, row * tile_size))
+                if world_data[row][col] == 9:
+                    img = pygame.transform.scale(trap_right_img, (tile_size, tile_size))
+                    WIN.blit(img, (col * tile_size, row * tile_size))
 
 class Button():
 	def __init__(self, x, y, image):
@@ -176,12 +175,12 @@ while run:
                 #update tile value
                 if pygame.mouse.get_pressed()[0] == 1:
                     world_data[y][x] += 1
-                    if world_data[y][x] > 6:
+                    if world_data[y][x] > 9:
                         world_data[y][x] = 0
                 elif pygame.mouse.get_pressed()[2] == 1:
                     world_data[y][x] -= 1
                     if world_data[y][x] < 0:
-                        world_data[y][x] = 6
+                        world_data[y][x] = 9
         if event.type == pygame.MOUSEBUTTONUP:
             clicked = False
         #up and down key presses to change level number
