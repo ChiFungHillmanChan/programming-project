@@ -8,7 +8,7 @@ clock = pygame.time.Clock()
 FPS = 60
 
 GAME_OVER = -1
-MAX_LEVEL = 2
+MAX_LEVEL = 3
 tile_size = 40
 rows = 25
 cols = 16 
@@ -93,8 +93,6 @@ class Trap_Top(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y      
 
-trap_top_group = pygame.sprite.Group()
-
 class Trap_Down(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
@@ -132,6 +130,7 @@ class Savepoint(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y  
 
+trap_top_group = pygame.sprite.Group()
 trap_down_group = pygame.sprite.Group()
 trap_right_group = pygame.sprite.Group()
 trap_left_group = pygame.sprite.Group()
@@ -287,20 +286,25 @@ class Player():
                     save_point[0] = 40 * round(self.rect.x // 40) + 10
                 save_point[1] = 40 * round(self.rect.y // 40)
                 game_over = 3
+
             # player coordinate 
             self.rect.x += dx
             self.rect.y += dy
             if self.rect.bottom > HEIGHT:
                 game_over = GAME_OVER 
+
             if self.rect.top < 0:
                 self.rect.top = 0
+
             if self.rect.left < 0 and level == 1:
                 self.rect.left = 0
+
             if self.rect.left < 0 and level > 1:
-                self.rect.left = WIDTH - 2
+                self.rect.left = WIDTH - 5
                 game_over = -2
+
             if self.rect.left > WIDTH:
-                self.rect.left = 0
+                self.rect.left = 20
                 game_over = 1
                 
             # animation
@@ -351,11 +355,9 @@ class Player():
         self.rect.y = y
 
 player = Player(save_point[1], save_point[1])
+world = World(load_level_map())
 
 # main funcrion
-
-
-world = World(load_level_map())
 def draw_map():
     world.draw()
     trap_top_group.draw(WIN)
@@ -363,6 +365,7 @@ def draw_map():
     trap_down_group.draw(WIN)
     trap_right_group.draw(WIN)
     save_point_group.draw(WIN)
+
 run = True
 while run:
     clock.tick(FPS)
@@ -379,6 +382,7 @@ while run:
         if game_over == -1:
             if restart_button.draw():
                 level = saved_level
+                trap_top_group = pygame.sprite.Group()
                 trap_down_group = pygame.sprite.Group()
                 trap_right_group = pygame.sprite.Group()
                 trap_left_group = pygame.sprite.Group()
@@ -387,8 +391,13 @@ while run:
                 draw_map()
                 player = Player(save_point[0], save_point[1])
                 game_over = 0
+
         if game_over == 1:
-            level += 1
+            level += 1   
+            if level > MAX_LEVEL:
+                run = False
+                continue
+            trap_top_group = pygame.sprite.Group()
             trap_down_group = pygame.sprite.Group()
             trap_right_group = pygame.sprite.Group()
             trap_left_group = pygame.sprite.Group()
@@ -396,8 +405,10 @@ while run:
             world = World(load_level_map())
             draw_map()
             game_over = 0
+
         if game_over == -2:
             level -= 1
+            trap_top_group = pygame.sprite.Group()
             trap_down_group = pygame.sprite.Group()
             trap_right_group = pygame.sprite.Group()
             trap_left_group = pygame.sprite.Group()
@@ -405,8 +416,9 @@ while run:
             world = World(load_level_map())
             draw_map()
             game_over = 0
+
         if game_over == 3:     
-            saved_level == level
+            saved_level = level
             game_over = 0
 
     pygame.display.update()

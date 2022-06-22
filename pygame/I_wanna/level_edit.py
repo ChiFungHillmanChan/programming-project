@@ -182,6 +182,7 @@ while run:
                     world_data[y][x] -= 1
                     if world_data[y][x] < 0:
                         world_data[y][x] = 9
+                
         if event.type == pygame.MOUSEBUTTONUP:
             clicked = False
         #up and down key presses to change level number
@@ -190,6 +191,7 @@ while run:
                 level += 1
             elif event.key == pygame.K_DOWN and level > 1:
                 level -= 1
+
 
     #update game display window
     pygame.display.update()
