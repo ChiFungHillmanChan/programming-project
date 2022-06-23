@@ -48,13 +48,6 @@ for col in range(cols):
     world_data.append(r)
 
 #create boundary
-for tile_col in range(0, cols):
-    for tile_row in range(0, rows):
-        # buttom 
-        world_data[cols-1][tile_row] = 6
-        world_data[0][tile_row] = 5
-        world_data[tile_col][0] = 5
-        world_data[tile_col][rows-1] = 6
     
 font = pygame.font.SysFont('Futura', 24)
 

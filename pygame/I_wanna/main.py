@@ -8,7 +8,7 @@ clock = pygame.time.Clock()
 FPS = 60
 
 GAME_OVER = -1
-MAX_LEVEL = 3
+MAX_LEVEL = 5
 tile_size = 40
 rows = 25
 cols = 16 
@@ -25,14 +25,6 @@ pygame.display.set_caption("I wanna")
 
 game_menu = True
 save_point = [0, 0]
-
-def load_level_map():
-    world_data = []
-    if os.path.exists(f'level{level}'):
-        pickle_in = open(f'level{level}', 'rb')
-        world_data = pickle.load(pickle_in)
-        return world_data
-
 level = 1
 saved_level = 1
 
@@ -102,7 +94,6 @@ class Trap_Down(pygame.sprite.Sprite):
         self.rect.y = y      
 
 
-
 class Trap_Right(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
@@ -110,7 +101,6 @@ class Trap_Right(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y      
-
 
 class Trap_left(pygame.sprite.Sprite):
     def __init__(self,x,y):
@@ -120,7 +110,19 @@ class Trap_left(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y      
 
-
+class Moving_Trap(pygame.sprite.Sprite):
+    def __init__(self,x,y):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.transform.scale(trap_top_img, (tile_size, tile_size)) 
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y    
+        self.move_counter = 0
+        self.vel = 10
+    def update(self):
+        self.rect.y -= self.vel
+        if self.rect.y < 0-40:
+            self.rect.y = 0-40
 #save_point 
 class Savepoint(pygame.sprite.Sprite):
     def __init__(self,x,y):
@@ -136,6 +138,7 @@ trap_right_group = pygame.sprite.Group()
 trap_left_group = pygame.sprite.Group()
 save_point_group = pygame.sprite.Group()
 
+moving_trap_group = pygame.sprite.Group()
 # world class
 class World():
     def __init__(self, data):
@@ -155,12 +158,8 @@ class World():
                     tile = (img, img_rect)
                     self.tile_list.append(tile)
                 if tile == 3:
-                    img = pygame.transform.scale(apple_img, (tile_size, tile_size)) 
-                    img_rect = img.get_rect()
-                    img_rect.x = col_count * tile_size
-                    img_rect.y = row_count * tile_size
-                    tile = (img, img_rect)
-                    self.tile_list.append(tile)
+                    move_trap_top = Moving_Trap(col_count * tile_size, row_count * tile_size)
+                    moving_trap_group.add(move_trap_top)
                 if tile == 4:
                     trap_down = Trap_Down(col_count * tile_size, row_count * tile_size)
                     trap_down_group.add(trap_down)
@@ -197,7 +196,6 @@ class World():
             # test self check sizes
             # pygame.draw.rect(WIN, (255,255,255), tile[1], 2)
 
-
 # Player class
 class Player():
     def __init__(self, x, y):
@@ -217,9 +215,7 @@ class Player():
         dx = 0
         dy = 0
         cool_down = 4
-
         if game_over == 0:
-
             # keys
             key = pygame.key.get_pressed()
             #left
@@ -272,24 +268,10 @@ class Player():
                         self.vel_y = 0
                         self.landed = 0
 
-            # check collision with traps 
-            if pygame.sprite.spritecollide(self, trap_top_group, False):
-                game_over = GAME_OVER 
-            if pygame.sprite.spritecollide(self, trap_left_group, False):
-                game_over = GAME_OVER 
-            if pygame.sprite.spritecollide(self, trap_right_group, False):
-                game_over = GAME_OVER 
-            if pygame.sprite.spritecollide(self, trap_down_group, False):
-                game_over = GAME_OVER 
-            elif pygame.sprite.spritecollide(self, save_point_group, False):
-                if 40 * round(self.rect.left // 40) == 40 * round(self.rect.right // 40):
-                    save_point[0] = 40 * round(self.rect.x // 40) + 10
-                save_point[1] = 40 * round(self.rect.y // 40)
-                game_over = 3
-
             # player coordinate 
             self.rect.x += dx
             self.rect.y += dy
+
             if self.rect.bottom > HEIGHT:
                 game_over = GAME_OVER 
 
@@ -317,11 +299,27 @@ class Player():
                     self.image = self.images_right[self.index]
                 if self.direction == -1:
                     self.image = self.images_left[self.index]
-
         elif game_over == -1 :
                 self.image = pygame.transform.flip(self.images_right[0] , False, True)
                 self.rect.y += 15
-            
+        # check collision with traps 
+        if pygame.sprite.spritecollide(self, trap_top_group, False):
+            game_over = GAME_OVER 
+        if pygame.sprite.spritecollide(self, trap_left_group, False):
+            game_over = GAME_OVER 
+        if pygame.sprite.spritecollide(self, trap_right_group, False):
+            game_over = GAME_OVER 
+        if pygame.sprite.spritecollide(self, trap_down_group, False):
+            game_over = GAME_OVER 
+        if pygame.sprite.spritecollide(self, moving_trap_group, False):
+            game_over = GAME_OVER 
+        elif pygame.sprite.spritecollide(self, save_point_group, False):
+            if 40 * round(self.rect.left // 40) == 40 * round(self.rect.right // 40):
+                save_point[0] = 40 * round(self.rect.x // 40) + 10
+            save_point[1] = 40 * round(self.rect.y // 40)
+            game_over = 3 
+        if self.rect.x > 390:
+                moving_trap_group.update()  
         WIN.blit(self.image, self.rect)
 
         # testing for rectangle
@@ -355,7 +353,6 @@ class Player():
         self.rect.y = y
 
 player = Player(save_point[1], save_point[1])
-world = World(load_level_map())
 
 # main funcrion
 def draw_map():
@@ -366,11 +363,33 @@ def draw_map():
     trap_right_group.draw(WIN)
     save_point_group.draw(WIN)
 
+    moving_trap_group.draw(WIN)
+
+def load_level_map():
+    world_data = []
+    if os.path.exists(f'level{level}'):
+        pickle_in = open(f'level{level}', 'rb')
+        world_data = pickle.load(pickle_in)
+        return world_data
+
+def reset_level():
+    trap_top_group.empty()
+    trap_down_group.empty()
+    trap_right_group.empty()
+    trap_left_group.empty()
+    save_point_group.empty()
+
+    moving_trap_group.empty()
+    world = World(load_level_map())
+    draw_map()
+    return world
+
+world = World(load_level_map())
+
 run = True
 while run:
     clock.tick(FPS)
     WIN.fill((135,206,250))
-
     if game_menu:
         if start_button.draw():
             game_menu = False
@@ -382,13 +401,7 @@ while run:
         if game_over == -1:
             if restart_button.draw():
                 level = saved_level
-                trap_top_group = pygame.sprite.Group()
-                trap_down_group = pygame.sprite.Group()
-                trap_right_group = pygame.sprite.Group()
-                trap_left_group = pygame.sprite.Group()
-                save_point_group = pygame.sprite.Group()
-                world = World(load_level_map())
-                draw_map()
+                world = reset_level()
                 player = Player(save_point[0], save_point[1])
                 game_over = 0
 
@@ -397,24 +410,12 @@ while run:
             if level > MAX_LEVEL:
                 run = False
                 continue
-            trap_top_group = pygame.sprite.Group()
-            trap_down_group = pygame.sprite.Group()
-            trap_right_group = pygame.sprite.Group()
-            trap_left_group = pygame.sprite.Group()
-            save_point_group = pygame.sprite.Group()
-            world = World(load_level_map())
-            draw_map()
+            world = reset_level()
             game_over = 0
 
         if game_over == -2:
-            level -= 1
-            trap_top_group = pygame.sprite.Group()
-            trap_down_group = pygame.sprite.Group()
-            trap_right_group = pygame.sprite.Group()
-            trap_left_group = pygame.sprite.Group()
-            save_point_group = pygame.sprite.Group()
-            world = World(load_level_map())
-            draw_map()
+            level -=1
+            world = reset_level()
             game_over = 0
 
         if game_over == 3:     
