@@ -3,7 +3,7 @@
 This directory includes all my Python projects. This page will show you what are the python project is doing.
 Link to description:
 
-[two_sum.py](#two_sum.py)
+[two_sum.py](##two_sum.py)
 
 ## check-polindrome.py
 
