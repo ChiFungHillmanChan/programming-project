@@ -9,5 +9,4 @@ Projects include:
 - 3. Project from online or Youtube and make adjustment for practicing coding
 
 ## LinkedIn
-[LINKEDIN]
-(https://www.linkedin.com/in/chi-fung-hillman-chan-2845a5201/?_l=en_US)
+[LINKEDIN](https://www.linkedin.com/in/chi-fung-hillman-chan-2845a5201/?_l=en_US)
