@@ -1,9 +1,9 @@
 # Python Projects
 
 This directory includes all my Python projects. This page will show you what are the python project is doing.
-
 Link to description:
-link:(##-two_sum.py)
+
+link:[Go to two_sum.py](##-two_sum.py)
 
 ## check-polindrome.py
 
