@@ -5,3 +5,5 @@ def main(nums, target):
             if nums[index] + nums[num] == target and index != num:
                 return [index, num]
         index += 1
+
+main()

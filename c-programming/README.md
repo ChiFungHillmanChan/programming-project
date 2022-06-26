@@ -1,7 +1,9 @@
-This directory includes all my projects writing by C programming language. This page will show you what are the python project is doing. All the programs are from collage's (University of Leeds) coursework requirement and it is mostly original file.
+# C Language Projects
 
-This directory contain couples folders inside:
-- library-system
-- pgm-handing
-- tic-tac-toe
+This directory includes all my projects writing by C programming language. This page will show you what are the c project is doing. All the programs are from collage's (University of Leeds) coursework requirement and it is mostly original file.
+
+Links to directory:
+- [library-system](library-system)
+- [pgm-handing](pgm-handing)
+- [tic-tac-toe](tic-tac-toe)
 
