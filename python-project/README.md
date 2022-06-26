@@ -2,6 +2,9 @@
 
 This directory includes all my Python projects. This page will show you what are the python project is doing.
 
+Link to description:
+link:(##-two_sum.py)
+
 ## check-polindrome.py
 
 This python program is going to check if the string input is palindrome
@@ -85,4 +88,22 @@ Input:
 Your program should read lines of text from standard input. Each line will consist of a non-empty string containing only the characters '0' through '9'. Each string is no more than 13 characters long.
 Output:
 For each input string, print to standard output the number of expressions that evaluate to an ugly number, one number per line.
+
+## two_sum.py
+This is a problem from 'Leetcode'
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+example:
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+
+## roman_to_integer.py
+This is a problem from 'Leetcode' to input the roman number and return it by integer.
+
+## linked_list.py
+This is a program to work with linked list in python
+This file just work with append, prepend and insert to specific place
+
+
 
