@@ -4,7 +4,7 @@ This directory includes all my Python projects. This page will show you what are
 
 Link to description:
 
-[two_sum.py](##two_sum.py)
+[two_sum.py](two_sum.py)
 
 ## check-polindrome.py
 
@@ -90,7 +90,7 @@ Your program should read lines of text from standard input. Each line will consi
 Output:
 For each input string, print to standard output the number of expressions that evaluate to an ugly number, one number per line.
 
-## [two_sum.py]
+## two_sum.py
 This is a problem from 'Leetcode'
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
