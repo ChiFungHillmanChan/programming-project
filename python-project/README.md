@@ -4,14 +4,14 @@ This directory includes all my Python projects. This page will show you what are
 
 Link to files:
 
-[check-polindrome.py](check-polindrome.py)
-[valid-subsequence.py](valid-subsequence.py)
-[roulette.py](roulette.py)
-[ugly_number.py](ugly_number.py)
-[two_sum.py](two_sum.py)
-[roman_to_integer.py](roman_to_integer.py)
-[linked_list.py](linked_list.py)
-[tic-tac-toe](tic-tac-toe)
+- [check-polindrome.py](check-polindrome.py)
+- [valid-subsequence.py](valid-subsequence.py)
+- [roulette.py](roulette.py)
+- [ugly_number.py](ugly_number.py)
+- [two_sum.py](two_sum.py)
+- [roman_to_integer.py](roman_to_integer.py)
+- [linked_list.py](linked_list.py)
+- [tic-tac-toe](tic-tac-toe)
 
 ## check-polindrome.py
 
