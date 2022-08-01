@@ -113,3 +113,25 @@ h4{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
+
+.reveal{
+    position: relative;
+    opacity:0;
+}
+.reveal.active{
+    opacity:1;
+}
+.active.fade-bottom{
+    animation: fade-bottom 2s ease-in;
+}
+
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
