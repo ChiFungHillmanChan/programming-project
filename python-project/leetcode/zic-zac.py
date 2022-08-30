@@ -23,4 +23,5 @@ def test(s, rows):
     else:
         print('False')
 
-test("PAYPALISHIRING", 3)
+if __name__ == '__main__':
+    test("PAYPALISHIRING", 3)

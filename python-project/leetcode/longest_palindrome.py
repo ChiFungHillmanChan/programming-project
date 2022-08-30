@@ -19,4 +19,5 @@ def counter(s, left,right):
         R += 1
     return R-L-1
 
-print(main('cbbd'))
+if __name__ == '__main__':
+    print(main('cbbd'))

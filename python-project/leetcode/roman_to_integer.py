@@ -12,3 +12,7 @@ def main(s):
             num+=roman[s[i]]
             i+=1
     return num
+
+
+if __name__ == '__main__':
+    print(main('IV'))

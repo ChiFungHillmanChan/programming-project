@@ -11,6 +11,6 @@ def main(words):
         print("False")
         return False
 
-
-main("A man, a plan, a canal: Panama")
+if __name__ == '__main__':
+    main("A man, a plan, a canal: Panama")
 

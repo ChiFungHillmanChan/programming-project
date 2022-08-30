@@ -11,5 +11,6 @@ def search(nums, target):
             return m
 
         return -1
+        
 if __name__ == '__main__':
     search([0,1,2,3,4,5], 4)

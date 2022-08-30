@@ -1,6 +1,3 @@
-from cgitb import reset
-from re import L
-
 
 grid1 = [
   ["1","1","1","1","0"],
