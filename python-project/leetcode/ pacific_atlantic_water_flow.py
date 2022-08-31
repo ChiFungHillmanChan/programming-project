@@ -16,7 +16,6 @@ def dfs(i, j, visited, n, m):
 
 
 def pacificAtlantic(self, heights):
-    MOVES = [(-1, 0), (0, -1), (1, 0), (0, 1)]
     n, m = len(heights), len(heights[0])
 
     atl_visited = set()
