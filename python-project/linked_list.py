@@ -2,6 +2,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -32,6 +33,21 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = prev_node.next
         prev_node.next = new_node
+
+    def length(self):
+        cur = self.head
+        total = 0
+        while cur.next:
+            total += 1
+            cur = cur.next
+        return total
+    def display(self):
+        elements = []
+        cur_node = self.head
+        while cur_node.next:
+            cur_node = cur_node.next
+            elements.append(cur_node.data)
+        print (elements)
 
 def main():
     llist = LinkedList()
